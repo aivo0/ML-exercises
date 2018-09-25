@@ -140,7 +140,7 @@ def heuristic_search(map, goal):
 
         for next_point in neighbors(map, current):
             if next_point not in came_from:
-                priority = heuristic(next_point, goal)
+                priority = heuristic(goal, next_point)
                 frontier.put((priority, next_point))
                 came_from[next_point] = current
     path = get_path(came_from, start, diamond)
@@ -172,10 +172,10 @@ def astar(map, goal):
             break
 
         for next_point in neighbors(map, current):
-            new_cost = cost_so_far[current] + heuristic(next_point, current)
+            new_cost = cost_so_far[current] + 1
             if next_point not in came_from or new_cost < cost_so_far[next_point]:
                 cost_so_far[next_point] = new_cost
-                priority = heuristic(next_point, goal)
+                priority = heuristic(goal, next_point)
                 frontier.put((priority, next_point))
                 came_from[next_point] = current
     path = get_path(came_from, start, diamond)
