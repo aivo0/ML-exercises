@@ -175,7 +175,7 @@ def astar(map, goal):
             new_cost = cost_so_far[current] + 1
             if next_point not in came_from or new_cost < cost_so_far[next_point]:
                 cost_so_far[next_point] = new_cost
-                priority = heuristic(goal, next_point)
+                priority = new_cost + heuristic(goal, next_point)
                 frontier.put((priority, next_point))
                 came_from[next_point] = current
     path = get_path(came_from, start, diamond)
