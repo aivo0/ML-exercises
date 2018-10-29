@@ -1541,6 +1541,7 @@ class InstrumentedProblem(Problem):
         return '<{:4d}/{:4d}/{:4d}/{}>'.format(self.succs, self.goal_tests,
                                                self.states, str(self.found)[:4])
 
+<<<<<<< HEAD
 def h1(self, node):
         # Manhattan kaugus iga ruudu jaoks, mis pole eesmärgis
         # Kui liita ruudu index % 3 jääk ja 3ga jagamise tulemus, siis saab hea costmapi
@@ -1548,6 +1549,8 @@ def h1(self, node):
 
 def astar_h1(p):
     return astar_search(p, p.h1)
+=======
+>>>>>>> f833eb709c7f97ab6883df78b88a03afa06dca1b
 
 def compare_searchers(problems, header,
                       searchers=[breadth_first_tree_search,
