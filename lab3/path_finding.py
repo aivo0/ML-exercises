@@ -2,7 +2,6 @@
 from queue import Queue, PriorityQueue
 
 
-
 def check_node(map, point, char):
     (x, y) = point
     if map[y][x] == char:
@@ -195,32 +194,35 @@ def main():
         map = [l.strip() for l in f.readlines() if len(l) > 1]
     goal = find_point(map, 'D')
     came_from, path = breadth_first_search(map)
-    print("Breadth-first search:")
+    print("Breadth-first search: ", end='')
     print(len(path))
-    # draw_results(came_from, path, map)
+    print(len(came_from))
+    #draw_results(came_from, path, map)
     came_from, path = heuristic_search(map, goal)
-    print("Heuristic search:")
+    print("Heuristic search: ", end='')
     print(len(path))
+    print(len(came_from))
     # draw_results(came_from, path, map)
     came_from, path = astar(map, goal)
-    print("A*:")
+    print("A*: ", end='')
     print(len(path))
-    #draw_results(came_from, path, map)
+    print(len(came_from))
+    draw_results(came_from, path, map)
 
     print("Cave 600x600")
     with open("cave600x600.txt") as f:
         map = [l.strip() for l in f.readlines() if len(l) > 1]
     goal = find_point(map, 'D')
     came_from, path = breadth_first_search(map)
-    print("Breadth-first search:")
+    print("Breadth-first search: ", end='')
     print(len(path))
     # draw_results(came_from, path, map)
     came_from, path = heuristic_search(map, goal)
-    print("Heuristic search:")
+    print("Heuristic search: ", end='')
     print(len(path))
     # draw_results(came_from, path, map)
     came_from, path = astar(map, goal)
-    print("A*:")
+    print("A*: ", end='')
     print(len(path))
     # draw_results(came_from, path, map)
 
@@ -229,15 +231,15 @@ def main():
         map = [l.strip() for l in f.readlines() if len(l) > 1]
     goal = find_point(map, 'D')
     came_from, path = breadth_first_search(map)
-    print("Breadth-first search:")
+    print("Breadth-first search: ", end='')
     print(len(path))
     # draw_results(came_from, path, map)
     came_from, path = heuristic_search(map, goal)
-    print("Heuristic search:")
+    print("Heuristic search: ", end='')
     print(len(path))
     # draw_results(came_from, path, map)
     came_from, path = astar(map, goal)
-    print("A*:")
+    print("A*: ", end='')
     print(len(path))
     # draw_results(came_from, path, map)
 

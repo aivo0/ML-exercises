@@ -109,6 +109,6 @@ vacWorldSim(initialState, 10, true, stateReflexAgent, false, false);
 console.log("Reflex agent - deterministic world");
 vacWorldSim(initialState, 10, false, reflexAgent, false, false);
 console.log("State reflex agent - random world");
-vacWorldSim(initialState, 100, true, stateReflexAgent, true, false);
+vacWorldSim(initialState, 20, true, stateReflexAgent, true, false);
 console.log("Reflex agent - random world");
-vacWorldSim(initialState, 100, false, reflexAgent, true, false);
+vacWorldSim(initialState, 20, false, reflexAgent, true, false);
